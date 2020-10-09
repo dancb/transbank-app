@@ -23,7 +23,8 @@ public class ControllerExceptionHandler {
             MethodArgumentTypeMismatchException.class,
             MissingServletRequestParameterException.class,
             HttpMessageNotReadableException.class,
-            ForbiddenException.class})
+            ForbiddenException.class,
+            IllegalArgumentException.class})
     @ResponseStatus(HttpStatus.FORBIDDEN)
     protected ApiException handleForbiddenExceptions(Exception ex) {
         return new ApiException(HttpStatus.BAD_REQUEST, BAD_REQUEST_MESSAGE);
