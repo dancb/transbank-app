@@ -33,10 +33,10 @@ public class UserServiceTest {
     public void shouldReturnTrue(){
         UserModel param = new UserModel();
         param.setPassword("test_transbank.2020");
-        param.setUserName("transkan_user");
+        param.setUsername("transkan_user");
 
         when(bCryptPasswordEncoder.matches(param.getPassword(), PASS)).thenReturn(true);
-        when(bCryptPasswordEncoder.matches(param.getUserName(), US)).thenReturn(true);
+        when(bCryptPasswordEncoder.matches(param.getUsername(), US)).thenReturn(true);
         boolean res = userService.isValid(param);
 
         assertThat(res).isEqualTo(true);
@@ -46,10 +46,10 @@ public class UserServiceTest {
     public void shouldReturnFalse(){
         UserModel param = new UserModel();
         param.setPassword("dsdsdsd");
-        param.setUserName("carlos");
+        param.setUsername("carlos");
 
         when(bCryptPasswordEncoder.matches(param.getPassword(), PASS)).thenReturn(false);
-        when(bCryptPasswordEncoder.matches(param.getUserName(), US)).thenReturn(false);
+        when(bCryptPasswordEncoder.matches(param.getUsername(), US)).thenReturn(false);
         boolean res = userService.isValid(param);
 
         assertThat(res).isEqualTo(false);

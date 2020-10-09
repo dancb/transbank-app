@@ -23,7 +23,7 @@ public class UserService {
     public boolean isValid(UserModel user){
 
         boolean isPasswordMatch = bCryptPasswordEncoder.matches(user.getPassword(), encodedPassword);
-        boolean isUserNameMatch = bCryptPasswordEncoder.matches(user.getUserName(), encodeUserName);
+        boolean isUserNameMatch = bCryptPasswordEncoder.matches(user.getUsername(), encodeUserName);
 
         if(isPasswordMatch && isUserNameMatch){
             return true;

@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserModel {
     private String name;
-    private String userName;
+    private String username;
     private String password;
     private String token;
 }

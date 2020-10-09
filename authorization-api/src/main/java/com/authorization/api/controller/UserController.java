@@ -21,7 +21,7 @@ public class UserController {
     public UserModel userAuth(@RequestBody UserModel user) {
 
         if (userService.isValid(user)) {
-            String token = JWTUtils.getJWTToken(user.getUserName());
+            String token = JWTUtils.getJWTToken(user.getUsername());
             user.setToken(token);
             return user;
         }

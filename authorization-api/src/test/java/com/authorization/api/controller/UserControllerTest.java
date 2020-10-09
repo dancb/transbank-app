@@ -26,7 +26,7 @@ public class UserControllerTest {
     public void shouldReturnNotNullObject(){
         UserModel param = new UserModel();
         param.setPassword("hahsgagdad");
-        param.setUserName("juan");
+        param.setUsername("juan");
 
         when(userService.isValid(any())).thenReturn(true);
         UserModel response = userController.userAuth(param);
